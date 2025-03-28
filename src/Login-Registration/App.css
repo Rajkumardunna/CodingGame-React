@@ -1,0 +1,285 @@
+/* General reset and layout styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #000; /* Black background */
+  color: #fff; /* White text color */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  max-width: 1200px; /* Keep max-width for the entire container */
+  transition: width 0.5s ease;
+}
+.left-side {
+  flex: 1;
+  background-color: #11111108; /* Dark background */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center items horizontally */
+  padding: 100px;
+  transition: opacity 0.5s ease;
+  color: #fff;
+  /* border: 15px solid #fff;  White border */
+  border-radius: 30%; /* Makes the container circular */
+  height: 450px; /* Fixed height (same as width for a circle) */
+  position: relative; /* Ensure proper positioning for animations */
+  overflow: hidden; /* To ensure content stays within the border */
+}
+.right-side {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.8); /* Light transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  transition: width 0.5s ease;
+  border-radius: 10px;
+
+}
+.coding-game {
+  display: flex;
+  margin-bottom: 60px;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 21px;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  animation: blink 3s infinite; /* Blink every 1 second */
+  color: #043d06;
+  text-transform: none;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.left-side.hidden {
+  opacity: 0;
+  pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.right-side.expanded {
+  flex: 2; /* Expand the form container when in Register mode */
+}
+
+.form-container {
+  background-color: #111;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  width: 200%;
+  max-width: 600px; /* Adjust this width to control the form's size */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centering all form elements */
+  
+}
+
+h2 {
+  margin-bottom: 20px;
+  color: whitesmoke;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #4caf50;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #333;
+  transition: all 0.3s ease;
+  width: 100%; /* Make input fields take up full width */
+}
+input:hover {
+  background-color: #c9f3cb;
+}
+
+button {
+  padding: 12px;
+  background-color: #043d06;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #0c6d11;
+}
+
+button:focus {
+  outline: none;
+}
+
+.form-toggle {
+  margin-top: 20px;
+}
+
+button.toggle-btn {
+  padding: 1px 20px;
+  background-color: #c9f3cb;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Add responsiveness for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-side,
+  .right-side {
+    flex: none;
+    width: 100%;
+  }
+
+  .form-container {
+    padding: 20px;
+  }
+}
+
+.creative-heading {
+  font-size: 2.5rem;
+  color: #fff;
+  background-image: linear-gradient(45deg, #ff6b6b, #ffad5c);
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: textAnimation 3s ease-in-out infinite;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3), 0 0 25px rgba(255, 255, 255, 0.5);
+  text-align: left;
+  text-transform: none;
+}
+
+/* Animation for text */
+@keyframes textAnimation {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-10px);
+    opacity: 0.5;
+  }
+}
+.coding-game h1 {
+  font-family: 'Pacifico', cursive;
+  font-size: 2rem;
+  text-align: center;
+  color: #043d06;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+coding-game.pacifico {
+  font-family: 'Pacifico', cursive;
+}
+
+.coding-game.lobster {
+  font-family: 'Lobster', cursive;
+}
+
+.coding-game.playfair {
+  font-family: 'Playfair Display', serif;
+}
+
+.coding-game.roboto {
+  font-family: 'Roboto', sans-serif;
+}
+
+.coding-game.oswald {
+  font-family: 'Oswald', sans-serif;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100vh;
+}
+
+.left-side {
+  position: relative;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.coding-game {
+  font-family: 'Pacifico', cursive;
+  font-size: 3rem;
+  color: #f4a261;
+}
+
+.creative-heading {
+  font-family: 'Pacifico', cursive;
+  font-size: 2.5rem;
+  color: #3b494e;
+  position: absolute;
+  animation: moveInCircle 5s infinite linear; /* Add this animation */
+}
+
+.creative-heading:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.creative-heading:nth-child(2) {
+  animation-delay: 1s;
+}
+
+.creative-heading:nth-child(3) {
+  animation-delay: 2s;
+}
+.creative-heading:nth-child(4) {
+  animation-delay: 3s;
+}
+
+/* Define circular movement animation */
+@keyframes moveInCircle {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(150px) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(150px)
+      rotate(-360deg);
+  }
+}
